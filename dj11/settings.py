@@ -94,13 +94,17 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         # 'ENGINE':'django.db.backends.postgresql_psycopg2',
-        # 'NAME':'dakec3a0rfu1u4',
+        # 'NAME':'@@dakec3a0rfu1u4**',
         # 'USER':'sfotlpsztilvhg',
-        # 'PASSWORD':'76410d846acddbfa3e9780baddc4e25b55da8b43e11160412b5d5f8932d7876a',
+        # 'PASSWORD':'*************************',
         # 'HOST':'ec2-54-156-60-12.compute-1.amazonaws.com',
         # 'PORT':'5432',
     }
 }
+
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 ######THIS IS FOR HEROKUAPP ###########
 # import dj_database_url
