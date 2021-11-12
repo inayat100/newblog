@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Searching....{% endblock title %}
+
+{% block body %}
+
+
+
+
+{% if se %}
+{% for td in se %}
+<div class="container col-md-8">
+<div class="jumbotron">
+  {% comment %} <b><h7 class="display-7">Post By {{ td.user}}</h7></b> {% endcomment %}
+  <p class="lead">{{ td.title }}</p>
+  <p>{{td.post|truncatechars:250 }}</p>
+
+<hr class="my-4">
+  <a class="btn btn-primary btn-sm" href="{% url 'test' td.id %}" >Read more</a>
+    <a href="/" class="btn btn-danger btn-sm">Go To Back</a>
+</div>
+<br>
+
+    </div>
+{% endfor %}
+{% else %}
+<div class="container col-md-8 my-5">
+<h4>You Can Not Found It -> <u> <b> {{ no }}  </b> </u></h4>
+<a href="/" class="btn btn-danger btn-sm">Go To Back</a>
+</div>
+{% endif %}
+
+
+
+{% endblock body %}

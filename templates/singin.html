@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Sing in{% endblock title %}
+
+{% block body %}
+<div class="container col-md-11">
+<form action="" method="POST">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+<input type="text" id="username" name="username" class="form-control my-2" ><br>
+    <label for="password">Password:</label>
+    <input name="password" id="password" type="password" class="form-control my-2"><br>
+<input type="submit" class="btn btn-success" value="Log in">
+    <a href="/" class="btn btn-danger">Go To</a>
+    <a href="{% url 'singup' %}" class="btn btn-outline-warning"> Sing Up</a>
+</form>
+</div>
+
+
+{% endblock body %}

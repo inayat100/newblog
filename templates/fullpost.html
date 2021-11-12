@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Full Post{% endblock title %}
+
+{% block body %}
+<div class="container col-md-9 my-md-5 bg">
+    
+<b>{{data.title}}</b><br><hr>
+{{ data.post }}
+<br><br>
+<h6 class="tx"> {{data.date}}</h6>
+<b><i><h6 class="tx"> Post By {{data.user}}</h6></i></b>
+    <hr>
+
+    <a href="/" class="btn btn-danger btn-sm mb-3">Go To Back</a>
+
+
+
+</div>
+{% endblock body %}

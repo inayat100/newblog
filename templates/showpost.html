@@ -1,0 +1,37 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock title %}
+
+{% block body %}
+{% if post %}
+{% for td in post %}
+
+<div class="container col-md-9">
+<div class="jumbotron">
+  <b><h7 class="display-7">Post By You ->{{ td.user}}</h7></b>
+  <p class="lead"><b>{{ td.title }}</b></p>
+  <hr class="my-4">
+  <p>{{td.post|truncatechars:200}}</p>
+<a class="btn btn-primary btn-sm" href="{% url 'test' td.id %}" >Read more</a>
+  <a href="{% url 'update' td.id %}" class="btn btn-warning btn-sm">Edit</a>
+            <form method="post" action="{% url 'delete' td.id %}" class="d-inline">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-danger btn-sm my-2 " value="Delete">
+            </form>
+</div>
+
+<br>
+    </div>
+{% endfor %}
+{% else %}
+
+<div class="container">
+    <h3>You Have NO Any Post</h3>
+</div>
+{% endif %}
+
+
+
+{% endblock body %}

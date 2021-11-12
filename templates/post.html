@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Post {% endblock title %}
+
+{% block body %}
+<div class="container col-md-8">
+    <b><h7 class="display-7">Writing By....{{user}}</h7></b>
+    <hr class="my-4">
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="title" >Title :</label>
+<input type="text" name="title" id="title" class="form-control my-2"  required>
+    <label for="post">Post:</label>
+<textarea name="post" id="post" class="form-control my-2" required></textarea>
+<input type="submit"  class="btn btn-success" >
+    <a href="/" class="btn btn-danger">Cancle</a>
+    </form>
+</div>
+{% endblock body %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Sing Up{% endblock title %}
+
+{% block body %}
+
+<div class="container col-11">
+<form action="" method="POST">
+    {% csrf_token %}
+    <label for="username">username *</label>
+<input type="text" name="username" id="username" class="form-control my-2" required><br>
+    <label for="fname">First Name *</label>
+<input type="text" id="fname" name="fname" class="form-control my-2" required><br>
+    <label for="lname">Last Name</label>
+<input type="text" id="lname" name="lname" class="form-control my-2" ><br>
+    <label for="email">Email *</label>
+<input type="text" name="email" id="email" class="form-control my-2" required ><br>
+    <label for="pass1">Password *</label>
+<input name="password1" id="pass1" type="password" class="form-control my-2" required><br>
+    <label for="pass2"> Confirm Password *</label>
+   <input name="password2" type="password" id="pass2" class="form-control my-2" required><br>
+<input type="submit" class="btn btn-success mb-5" value="Sing Up">
+    <a href="/" class="btn btn-danger mb-5">Cancle</a>
+
+
+</form>
+</div>
+
+{% endblock body %}

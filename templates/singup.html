@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Sing Up{% endblock title %}
+
+{% block body %} 
+<div class="container col-6">
+<form action="" method="POST">
+    {% csrf_token %}
+{{ form.as_p }}
+<input type="submit" class="btn btn-primary">
+    <a href="{%url 'singin' %}" class="btn btn-secondary">Log In</a>
+
+</form>
+</div>
+{% endblock body %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}HOME{% endblock title %}
+
+{% block body %}
+
+
+
+
+{% if allpost %}
+
+{% for td in allpost %}
+<div class="container col-md-8 ">
+<div class="m-md-0 m-sm-3">
+  {% comment %} <b><h7 class="display-7">Post By {{ td.user}}</h7></b><br> {% endcomment %}
+
+  <p class="lead mt-3 " ><b>{{ td.title }}</b></p>
+  <p >{{td.post|truncatechars:200 }}</p>
+
+
+  <a class="btn btn-primary btn" href="{% url 'test' td.id %}" role="button">Read more</a>
+
+<hr class="my-4">
+
+<br>
+</div>
+    </div>
+{% endfor %}
+
+{% else %}
+<div class="container col-md-8 ">
+    <h4>Please share your thoughts</h4>
+</div>
+{% endif %}
+
+{% endblock body %}

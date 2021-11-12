@@ -1,0 +1,1 @@
+web: gunicorn dj11.wsgi --log-file -
